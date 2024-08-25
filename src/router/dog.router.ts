@@ -8,6 +8,7 @@ import { intParseableString as intParseableString } from "../zod/parseableString
 const dogController = Router();
 // TODO
 // Needs ______?
+// authorize
 dogController.get("/dogs", async (req, res) => {
   const dogs = await prisma.dog.findMany();
   return res.json(dogs);
