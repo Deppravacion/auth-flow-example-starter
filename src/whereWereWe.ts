@@ -6,3 +6,5 @@
 
 // 8/29 evening  we completed the auth 5. postman confirmed post request to
 // /auth/login    next we need to return the JWT Token
+
+// 8/30  started jwt lesson  JWT video 6:30
