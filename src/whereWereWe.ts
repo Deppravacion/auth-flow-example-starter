@@ -8,3 +8,5 @@
 // /auth/login    next we need to return the JWT Token
 
 // 8/30  started jwt lesson  JWT video 6:30
+
+// 8/31  auth 7 start video JWT token on endpoint
