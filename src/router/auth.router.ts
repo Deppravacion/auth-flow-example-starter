@@ -42,6 +42,7 @@ authController.post(
 
     const userInformation = createUnsecureUserInformation(user);
     const token = createTokenForUser(user);
+
     return res.status(200).json({ token, userInformation });
   }
 );

@@ -8,7 +8,7 @@ const editedJWT =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYmlzaCIsImlhdCI6MTcyNTE1MzgxNn0.qxqOV1VN640bKYq4Sk94FD0sFXf8YYiMvzcKQmTExXU";
 //super-secret-bish
 const messingAroundJWT =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3Vja2EiLCJsYXN0TmFtZSI6InBoaXNoIiwiYWdlIjozNywiaWF0IjoxNzI1MTU0Nzc3fQ.W-PYxfB-Qd8UOd1vM7d-NdEiSB_h3267ZMNU1GZBsCQ";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ28gZmFzdGVyIiwibGFzdE5hbWUiOiJjb25zaXN0ZW5jeSIsImFnZSI6MzcsImlhdCI6MTcyNTQ1NDU1N30.afb1YdpQ4_vzrGRO_uhuqMa0DLp-VqeYx2IPID_bRyM";
 
 // const data = {
 //   name: "Jon",
@@ -23,7 +23,7 @@ const myDataCheck = jwt.verify(messingAroundJWT, "super-secret-info");
 
 const myJwt = jwt.sign(data, "super-secret-info");
 
-// console.log(myJwt);
+console.log(myJwt);
 console.log(myDataCheck);
 // ******************
 // const johnsHashedPassword =

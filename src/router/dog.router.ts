@@ -4,6 +4,7 @@ import "express-async-errors";
 import { validateRequest } from "zod-express-middleware";
 import { z } from "zod";
 import { intParseableString as intParseableString } from "../zod/parseableString.schema";
+import { log } from "console";
 
 const dogController = Router();
 // TODO
@@ -25,6 +26,12 @@ dogController.post(
     }),
   }),
   async (req, res) => {
+    const [, token] = req.headers.authorization?.split?.(" ") || [];
+
+    console.log(token);
+    console.log(req.headers);
+    console.log(req.headers.authorization);
+
     const { name, userEmail } = req.body;
     const user = await prisma.user
       .findFirstOrThrow({

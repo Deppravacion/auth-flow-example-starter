@@ -10,3 +10,6 @@
 // 8/30  started jwt lesson  JWT video 6:30
 
 // 8/31  auth 7 start video JWT token on endpoint
+// 8/31 4:10 ^^
+//9-4  fucking hell- days off messing up everything. had to rewatch previous videos to get back into
+// shape for understanding how to set and recover the JWT
