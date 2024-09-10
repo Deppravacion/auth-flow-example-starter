@@ -1,10 +1,10 @@
-import { Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { prisma } from "../../prisma/db.setup";
 import "express-async-errors";
 import { validateRequest } from "zod-express-middleware";
 import { z } from "zod";
 import { intParseableString as intParseableString } from "../zod/parseableString.schema";
-import { log } from "console";
+import { authMiddleware, getDataFromAuthToken } from "../authUtils";
 
 const dogController = Router();
 // TODO
@@ -19,37 +19,26 @@ dogController.get("/dogs", async (req, res) => {
 // Needs ______?
 dogController.post(
   "/dogs",
+
   validateRequest({
     body: z.object({
       name: z.string(),
-      userEmail: z.string().email(),
+      // userEmail: z.string().email(),
     }),
   }),
+  authMiddleware,
   async (req, res) => {
-    const [, token] = req.headers.authorization?.split?.(" ") || [];
+    // ! JWT handing stuff below
+    // moved to authMiddleware
 
-    console.log(token);
-    console.log(req.headers);
-    console.log(req.headers.authorization);
-
-    const { name, userEmail } = req.body;
-    const user = await prisma.user
-      .findFirstOrThrow({
-        where: {
-          email: userEmail,
-        },
-      })
-      .catch(() => null);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
+    // !JWT jandling stuff above
+    const { name } = req.body;
 
     const dog = await prisma.dog
       .create({
         data: {
           name,
-          userEmail,
+          userEmail: req.user!.email,
         },
       })
       .catch(() => null);

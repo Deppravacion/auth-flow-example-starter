@@ -13,3 +13,7 @@
 // 8/31 4:10 ^^
 //9-4  fucking hell- days off messing up everything. had to rewatch previous videos to get back into
 // shape for understanding how to set and recover the JWT
+
+// made it to final auth. shit started breaking wtih the middle where function
+// specifically the authorization on headers is no longer valid
+//  we have finished Auth and have been looking at the last video for ENV variables 9/9
