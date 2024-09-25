@@ -20,7 +20,8 @@ export const createUnsecureUserInformation = (user: User) => {
 export const createTokenForUser = (user: User) => {
   return jwt.sign(
     createUnsecureUserInformation(user),
-    "super-secret"
+    "super-secret" //replaced using the env
+    // process.env.JWT_SECRET
   );
 };
 

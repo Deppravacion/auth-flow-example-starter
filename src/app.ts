@@ -13,6 +13,7 @@ declare global {
     }
   }
 }
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
